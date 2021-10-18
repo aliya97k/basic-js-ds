@@ -23,19 +23,19 @@ module.exports = function removeKFromList(l, k) {
   if(l == null) {
     return l;
   }
-  while (l.value == k){
+  while (l.val == k){
     l = l.next; 
   }
-  thisNode = l;
-  nextNode = thisNode.next;
+  let currentNode = l;
+  let nextNode = currentNode.next;
   while (nextNode != null) {
-    if (nextNode.value == k) {
-        thisNode.next = nextNode.next;
-        if (thisNode.next == null)
+    if (nextNode.val == k) {
+        currentNode.next = nextNode.next;
+        if (currentNode.next == null)
             break;
     }
-    thisNode = thisNode.next;
-    nextNode = thisNode.next;       
+    currentNode = currentNode.next;
+    nextNode = currentNode.next;       
   }
   return l;
 }
